@@ -5,13 +5,13 @@ export default class NewsItem extends Component {
     render() {
         return (
             <div className="card my-2 mx-2" >
-                <img className="card-img-top" src={this.props.urlToImage} alt="Card image cap" />
+                <img className="card-img-top" src={this.props.urlToImage} alt="images Not found" />
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title}</h5>
                     <p className="card-text ">
                         {this.props.description}
                     </p>
-                    <a href={this.props.newsUrl} target="_blank" className="btn btn-primary btn-sm ">Read more</a>
+                    <a href={this.props.newsUrl} target="_blank" className="btn btn-primary btn-sm " rel="noopener noreferrer">Read more</a>
                 </div>
             </div>
         )
