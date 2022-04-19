@@ -26,6 +26,7 @@ export default class News extends Component {
             articles: parshData.articles,
             loading: false
         });
+        console.log("handlPrevClick");
     }
 
     handleNextClick = async () => {
@@ -38,6 +39,7 @@ export default class News extends Component {
             articles: parshData.articles,
             loading: false
         });
+        console.log("handleNextClick");
     }
 
     async componentDidMount() {
