@@ -1,43 +1,27 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-export default class Navbar extends Component {
+import React from 'react';
+import './Navbar.css'
+const Navbar = ({ setType, setCountry }) => {
+    const cntr = ['ae', 'ar', 'at', 'au', 'be', 'bg', 'br', 'ca', 'ch', 'cn', 'co', 'cu', 'cz', 'de', 'eg', 'fr', 'gb', 'gr', 'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr', 'lt', 'lv', 'ma', 'mx', 'my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru', 'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za'];
+    let cotegry = ['Technology', 'Science', 'Sports', 'Business', 'Entertainment']
 
-    render() {
-
-        return (
-            <div className="fixed-top shadow-lg">
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
-                    <div className="container-fluid">
-                        <Link className="navbar-brand" to="/">News Monkey</Link>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav">
-                                <li className="nav-item">
-                                    <Link className="nav-link active" to="/Technology">Technology</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" to="/Science">Science</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" to="/Sports">Sports</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" to="/Business">Business</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" to="/Entertainment">Entertainment</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <div className="container  bg-white" >
-                    <h4 >{this.props.type} Top Headline </h4>
-                    <hr style={{ color: '#6200ff', height: '1px' }} />
+    return (
+        <nav className="navbar">
+            <div className="navbar-container container">
+                <input type="checkbox" name="" id="" />
+                <div className="hamburger-lines">
+                    <span className="line line1"></span>
+                    <span className="line line2"></span>
+                    <span className="line line3"></span>
                 </div>
+                <ul className="menu-items">
+                    {cotegry.map((cot, index) => {
+                        return (<li onClick={() => { setType(cot) }} key={index} className='item'> {cot}</li>)
+                    })}
+                </ul>
+                <h1 className="logo">Navbar</h1>
             </div>
-        )
-    }
-}
+        </nav>
+    );
+};
+
+export default Navbar;
