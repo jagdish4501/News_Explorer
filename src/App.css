@@ -1,6 +1,10 @@
 .App_dark{
+  -webkit-user-select: none;
+  user-select: none;
   background-color: black;
 }
 .App_light{
+  -webkit-user-select: none;
+  user-select: none;
   background-color: aliceblue;
 }

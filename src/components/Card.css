@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 30%;
-  min-width: 400px;
+  min-width: 380px;
   margin: 10px 0px;
   padding: 1px;
   box-shadow: 0 4px 8px 0 #e0070733, 0 6px 20px 0 rgba(244, 7, 7, 0.19);
@@ -14,6 +14,14 @@
     max-height: 18rem;
     object-fit: contain;
     
+}
+.img_not_found{
+  width: 100%;
+  text-align: center;
+  margin-top: 5rem;  
+  color: rgb(92, 203, 166);
+  font-size: xx-large;
+  font-weight: 500;
 }
 
 
@@ -39,30 +47,29 @@
 .button:hover {
   background-color: #4CAF50; /* Green */
   color: white;
+  cursor: pointer;
 }
 
-.card_header,.card_header_dark{  
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Number of lines to show before ellipsis */
-  -webkit-box-orient: vertical;
-  white-space: normal; /* Allow the first line to wrap */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: x-large;
-  font-weight: 500;
-  height: 70px;
-  margin: 3px;
-}
-
-.card_text,.card_text_dark{
+.card_header_dark,.card_header{  
   display: -webkit-box;
   -webkit-line-clamp: 3; /* Number of lines to show before ellipsis */
   -webkit-box-orient: vertical;
   white-space: normal; /* Allow the first line to wrap */
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: x-large;
+  font-weight: 500;
+  margin: 3px;
+}
+
+.card_text,.card_text_dark{
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to show before ellipsis */
+  -webkit-box-orient: vertical;
+  white-space: normal; /* Allow the first line to wrap */
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size:large;
-  height: 70px;
   margin: 5px;
 }
 

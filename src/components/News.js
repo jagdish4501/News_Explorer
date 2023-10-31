@@ -13,24 +13,21 @@ const News = ({ country = 'in', newsType = 'general', theme }) => {
             if (total_page.current + 1 > page.current) {
                 setLoading(true)
                 page.current = page.current + 1;
-                console.log(url)
                 const response = await fetch(url);
                 const parsedData = await response.json();
-                console.log(response, parsedData)
                 total_page.current = parsedData.totalResults / 12;
                 change ? setArticles([...parsedData.articles]) : setArticles([...articles, ...parsedData.articles]);
-            } else console.log("No more data");
+            } else window.alert("No more News");
             setLoading(false)
         } catch (error) {
+            page.current = 1; total_page.current = 2;
+            window.alert('Something went wrong try again')
             console.error('Error Handelar Message From Fetch Data:', error);
             setLoading(false)
         }
     };
-    console.log("news :", newsType, country, theme)
     // eslint-disable-next-line
     useEffect(() => { page.current = 1; total_page.current = 2; fetchData(true); }, [newsType, country])
-
-
     // useEffect(() => {
     //     if (scroll.current) {
     //         let x = scroll.current
@@ -46,7 +43,6 @@ const News = ({ country = 'in', newsType = 'general', theme }) => {
     //     }
     // }, []);
 
-
     return (
         <div>
             <div className='Container'>
@@ -55,21 +51,19 @@ const News = ({ country = 'in', newsType = 'general', theme }) => {
                         className='Card'
                         title={element.title}
                         description={element.description}
-                        urlToImage={
-                            element.urlToImage === null
-                                ? 'https://s.wsj.net/public/resources/MWimages/MW-GP644_MicroS_ZG_20180906154215.jpg'
-                                : element.urlToImage
-                        }
+                        urlToImage={element.urlToImage}
                         newsUrl={element.url}
                         theme={theme}
                     />))}
             </div>
 
-            {loading && <div className='Container'><img src={Spiner} alt="loading" /></div>}
+            {!loading &&
+                <div className='Container'>
+                    <button onClick={() => { fetchData(false) }} className='button'>Load More</button>
+                </div>
+            }
 
-            <div className='Container'>
-                <button onClick={() => { fetchData(false) }}>Load More</button>
-            </div>
+            {loading && <div className='Container'><img src={Spiner} alt="loading" /></div>}
         </div>
     );
 };
