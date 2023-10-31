@@ -5,10 +5,19 @@
     padding: 0;
     margin: 0;
 }
-
 .html{
     font-size: 62.5%;
 }
+select{
+    border:none;
+    padding: 10px 20px;
+    border-radius:5px;
+  }
+  
+  select:focus{
+    outline:none;
+  }
+  
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines{
@@ -178,3 +187,68 @@
         display: none;
     }
 }
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
+
+
+/* checkBox css */
+/* Styling for the label that wraps the checkbox and ball */
+.radio{
+    border: 1px solid black;
+    width: 50px;
+    border-radius: 50px;
+}
+.checkbox-label_light, .checkbox-label_dark {
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  
+  /* Styling for the ball inside the label */
+  .checkbox-label_light .ball_light, .checkbox-label_dark .ball_dark {
+    background-color: black;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform .3s linear;
+  }
+  
+  /* Styling for the label when the dark theme is active */
+  .checkbox-label_dark {
+    background-color: black;
+  }
+  
+  /* Styling for the ball when the dark theme is active */
+  .checkbox-label_dark .ball_dark {
+    background-color: white;
+  }
+  
+  /* Styling for the ball when the checkbox is checked */
+
+  .checkbox:checked + .checkbox-label_light .ball_light {
+    transform: translateX(25px);
+  }
+
+  .checkbox:checked + .checkbox-label_dark .ball_dark {
+    transform: translateX(25px);
+  }
+  
+
+
+
+
+
