@@ -2,9 +2,11 @@
   -webkit-user-select: none;
   user-select: none;
   background-color: black;
+  min-height: 100vh;
 }
 .App_light{
   -webkit-user-select: none;
   user-select: none;
   background-color: aliceblue;
+  min-height: 100vh;
 }
