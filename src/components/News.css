@@ -7,3 +7,10 @@
     margin: 10px auto;
 }
 
+
+.Loader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
+}

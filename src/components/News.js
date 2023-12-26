@@ -59,11 +59,16 @@ const News = ({ country = 'in', newsType = 'general', theme }) => {
 
             {!loading &&
                 <div className='Container'>
-                    <button onClick={() => { fetchData(false) }} className='button'>Load More</button>
+                    <button onClick={() => { fetchData(false) }} className='button'>Show More</button>
                 </div>
             }
 
-            {loading && <div className='Container'><img src={Spiner} alt="loading" /></div>}
+            {loading &&
+                <div className='Loader'>
+                    <img src={Spiner} alt="loading" style={{ height: '80px', width: '80px' }} />
+                    <h1>Please wait for 2 minutes as our backend server wakes up from sleep.</h1>
+                </div>
+            }
         </div>
     );
 };
