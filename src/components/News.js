@@ -62,13 +62,18 @@ const News = ({ country = 'in', newsType = 'general', theme }) => {
                     <button onClick={() => { fetchData(false) }} className='button'>Show More</button>
                 </div>
             }
-
             {loading &&
                 <div className='Loader'>
-                    <img src={Spiner} alt="loading" style={{ height: '80px', width: '80px' }} />
-                    <h1>Please wait for 2 minutes as our backend server wakes up from sleep.</h1>
+                    <img src={Spiner} alt="loading" style={{ height: '150px', width: '150px', borderRadius: '200px' }} />
                 </div>
             }
+            {loading &&
+                <div className='Container'>
+                    <h1 style={{ color: 'aliceblue' }}>Please wait for 2 minutes as our backend server wakes up from sleep.</h1>
+                    <h2 style={{ color: 'aliceblue' }}>Click on Show More Button for loading new News OR in case of Something went wrong Message Apear</h2>
+                </div>
+            }
+
         </div>
     );
 };
